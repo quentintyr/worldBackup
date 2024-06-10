@@ -29,7 +29,7 @@
    <enum>QTabWidget::Rounded</enum>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QGroupBox" name="groupBox">
+   <widget class="QGroupBox" name="files_gBox">
     <property name="geometry">
      <rect>
       <x>360</x>
@@ -47,41 +47,41 @@
        <x>10</x>
        <y>20</y>
        <width>311</width>
-       <height>51</height>
+       <height>54</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout">
       <item row="0" column="0">
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="source_label">
         <property name="text">
          <string>Source</string>
         </property>
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QLineEdit" name="lineEdit"/>
+       <widget class="QLineEdit" name="source_text"/>
       </item>
       <item row="1" column="0">
-       <widget class="QLabel" name="label_3">
+       <widget class="QLabel" name="location_label">
         <property name="text">
          <string>Location</string>
         </property>
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="QLineEdit" name="lineEdit_2"/>
+       <widget class="QLineEdit" name="location_text"/>
       </item>
       <item row="0" column="2">
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="source_select">
         <property name="text">
-         <string>PushButton</string>
+         <string>Select</string>
         </property>
        </widget>
       </item>
       <item row="1" column="2">
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QPushButton" name="location_select">
         <property name="text">
-         <string>PushButton</string>
+         <string>Select</string>
         </property>
        </widget>
       </item>
@@ -110,18 +110,18 @@
     <property name="currentIndex">
      <number>0</number>
     </property>
-    <widget class="QWidget" name="tab">
+    <widget class="QWidget" name="changes_tab">
      <attribute name="title">
       <string>Changes</string>
      </attribute>
     </widget>
-    <widget class="QWidget" name="tab_2">
+    <widget class="QWidget" name="tab_2history_tab">
      <attribute name="title">
       <string>History</string>
      </attribute>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="groupBox_3">
+   <widget class="QGroupBox" name="backups_gBox">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -144,24 +144,24 @@
      </property>
      <layout class="QGridLayout" name="gridLayout_3">
       <item row="0" column="1">
-       <widget class="QPushButton" name="pushButton_4">
+       <widget class="QPushButton" name="push_button">
         <property name="text">
-         <string>Upload</string>
+         <string>Push</string>
         </property>
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="QPushButton" name="pushButton_3">
+       <widget class="QPushButton" name="pull_button">
         <property name="text">
-         <string>Download</string>
+         <string>Pull</string>
         </property>
        </widget>
       </item>
       <item row="1" column="0">
-       <widget class="QComboBox" name="comboBox_3"/>
+       <widget class="QComboBox" name="comboboxBackup"/>
       </item>
       <item row="0" column="0">
-       <widget class="QLabel" name="label_2">
+       <widget class="QLabel" name="currentBackup">
         <property name="text">
          <string>Current Backup</string>
         </property>
@@ -181,14 +181,14 @@
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QLabel" name="label_4">
+      <widget class="QLabel" name="schedule_label">
        <property name="text">
         <string>Select Schedule</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QComboBox" name="comboBox">
+      <widget class="QComboBox" name="scheduleBox">
        <item>
         <property name="text">
          <string>Daily</string>
@@ -212,14 +212,14 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="label_5">
+      <widget class="QLabel" name="type_label">
        <property name="text">
         <string>Select Type</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QComboBox" name="comboBox_2">
+      <widget class="QComboBox" name="typeBox">
        <item>
         <property name="text">
          <string>Folder</string>
@@ -261,9 +261,9 @@
     <addaction name="actionUndo"/>
     <addaction name="actionRedo"/>
     <addaction name="actionCut"/>
-    <addaction name="actionCop"/>
+    <addaction name="actionCopy"/>
     <addaction name="actionPaste"/>
-    <addaction name="actionSelect_All"/>
+    <addaction name="actionselectAll"/>
     <addaction name="actionFind"/>
    </widget>
    <widget class="QMenu" name="menuView">
@@ -273,7 +273,7 @@
     <addaction name="actionChanges"/>
     <addaction name="actionHistory"/>
     <addaction name="actionBackup_List"/>
-    <addaction name="actionDeveloper_Tools"/>
+    <addaction name="actiondevTools"/>
    </widget>
    <widget class="QMenu" name="menuBackups">
     <property name="title">
@@ -344,7 +344,7 @@
     <string>Cut</string>
    </property>
   </action>
-  <action name="actionCop">
+  <action name="actionCopy">
    <property name="text">
     <string>Copy</string>
    </property>
@@ -354,7 +354,7 @@
     <string>Paste</string>
    </property>
   </action>
-  <action name="actionSelect_All">
+  <action name="actionselectAll">
    <property name="text">
     <string>Select All</string>
    </property>
@@ -379,7 +379,7 @@
     <string>Backup List</string>
    </property>
   </action>
-  <action name="actionDeveloper_Tools">
+  <action name="actiondevTools">
    <property name="text">
     <string>Developer Tools</string>
    </property>
